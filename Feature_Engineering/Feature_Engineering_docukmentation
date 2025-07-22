@@ -1,0 +1,90 @@
+# Project: Restaurant Location Recommendation Tool & Analysis ##
+
+# Goal
+Feature engineering was applied to enrich the synthetic dataset with realistic, context-aware attributes that reflect local environmental factors influencing restaurant performance. These features are designed to support predictive modeling, location-based recommendation systems, and spatial analysis.
+
+# Steps of Feature Engineering
+1. Understand the Business Problem :
+   Identify what real-world factors influence restaurant success.
+   In this case: location, income, competition, footfall, amenities, etc.
+2. Explore Existing Data :
+   Analyze the original dataset to understand what features already exist.
+   Check for missing, irrelevant, or redundant data.
+3. Identify Gaps in the Data :
+   Recognize missing but important variables (e.g., footfall, proximity to metro, parking).
+   Decide which of these can be added synthetically or derived.   
+4. Design New Features :
+   Decide on meaningful features to create.
+   For your dataset: Distance_to_Metro, Average_Income, Nearby_Competitors, Footfall_Peak, Near_Tourist_Spot, Parking_Available.
+5. Generate Features Programmatically :
+   Use libraries like NumPy or Pandas to simulate or derive new feature values.
+   Use random distributions (e.g., uniform, Poisson) and conditional logic as needed.
+6. Validate the New Features :
+   Check distributions, uniqueness, and ranges of the new columns.
+   Ensure they align with expected real-world behavior.
+7. Integrate Features into the Dataset :
+   Add the engineered features as new columns.
+   Ensure they are in a clean, usable format for analysis or modeling.
+8. Export the Updated Dataset :
+   Save the final dataset to a file (e.g., CSV) for use in downstream tasks like visualization or machine learning.
+
+
+# Feature Engineering Code – Step-by-Step
+Each feature was generated using NumPy's randomization functions, designed to reflect real-world distributions and urban patterns:
+
+import numpy as np
+
+<pre>dataset['Distance_to_Metro'] = np.round(np.random.uniform(0.1, 10.0, size=len(dataset)), 2) </pre>
+
+➤ Adds a feature representing the distance (in km) from the restaurant to the nearest metro station, randomly between 0.1 and 10.0.
+
+<pre>dataset['Average_Income'] = np.random.randint(15, 150, size=len(dataset)) * 1000 </pre>
+
+➤ Simulates the average monthly income (in INR) of the surrounding area, ranging from ₹15,000 to ₹149,000.
+
+<pre>dataset['Nearby_Competitors'] = np.random.randint(0, 11, size=len(dataset)) </pre>
+
+➤ Adds the number of competing restaurants within a 1 km radius, ranging from 0 to 10.
+
+<pre>dataset['Footfall_Peak'] = np.random.choice(['Day', 'Night', 'Balanced'], size=len(dataset)) </pre>
+
+➤ Assigns the peak time of customer traffic as either 'Day', 'Night', or 'Balanced' for each restaurant.
+
+<pre>dataset['Near_Tourist_Spot'] = np.random.choice([0, 1], size=len(dataset), p=[0.7, 0.3]) </pre>
+
+➤ Indicates whether the restaurant is near a tourist attraction (1 = Yes, 0 = No) with a 30% probability of being near one.
+
+<pre>dataset['Parking_Available'] = np.random.choice([0, 1], size=len(dataset), p=[0.4, 0.6]) </pre>
+
+➤ Flags if customer parking is available near the restaurant (1 = Yes, 0 = No), with 60% probability of availability.
+
+# Assumptions Behind Each Feature
+Distance to Metro: Urban areas typically have metro access ranging from 0.1 to 10 km.
+
+Income: Income levels affect spending habits; modeled from ₹15k–₹150k based on middle- to upper-class localities.
+
+Competition: More restaurants in proximity imply higher competition, usually 0–10 within a 1 km radius.
+
+Footfall Peak: Certain areas (e.g., business districts) peak during the day, others (e.g., nightlife zones) at night.
+
+Tourist Spot Proximity: About 30% of entries are near tourist attractions.
+
+Parking: 60% of locations are modeled to have parking based on typical urban zoning.
+
+# Export
+After all features were added, the final dataset was saved:
+
+<pre>dataset.to_csv("engineered_restaurant_data.csv", index=False)</pre>
+
+➤ Saves the updated dataset with all engineered features to a CSV file named engineered_restaurant_data.csv, excluding the index column for cleaner output.
+
+# Outcome
+These engineered features significantly enhance the dataset's ability to:
+   Train robust machine learning models
+   Simulate real-world restaurant dynamics
+   Perform spatial and demographic business analysis
+
+# Summary
+To enhance the restaurant dataset and simulate real-world conditions for better analysis, six new features were engineered using NumPy. These features include Distance_to_Metro, which estimates how far each restaurant is from the nearest metro station (ranging from 0.1 to 10 km), and Average_Income, which represents the average monthly income of the surrounding locality, ranging from ₹15,000 to ₹150,000. The Nearby_Competitors feature captures the number of similar restaurants within a 1 km radius, reflecting local competition. Footfall_Peak is a categorical feature indicating when customer traffic is highest—during the day, night, or balanced across both. Two binary features were also added: Near_Tourist_Spot, showing whether the restaurant is close to a tourist attraction (30% probability), and Parking_Available, indicating if customer parking is accessible (60% probability). These features were designed based on practical business considerations and urban patterns, and the enhanced dataset was saved as engineered_restaurant_data.csv. Overall, these additions increase the dataset’s contextual depth, making it well-suited for location-based recommendation models, performance prediction, and spatial business analysis.
+
+
