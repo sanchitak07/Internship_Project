@@ -42,6 +42,8 @@ This code block generates a heatmap to visualize the correlation matrix of numer
     <img src="Screenshots/correlation.png" alt="Correlation Heatmap" width="700">
 </p>
 
+ <img width="1155" height="737" alt="image" src="https://github.com/user-attachments/assets/7dfc9cc3-9633-4ee9-9b3e-6579de39ae76" />
+
                                                              Fig 1.Heatmap displayed
 
 <pre>#Top Locations by Average Rating
@@ -125,3 +127,4 @@ print("-> Higher population density correlates with greater restaurant success."
 print("->Areas with moderate competition show better average performance.")
 
 Restaurants located near transport hubs tend to receive higher success ratings, suggesting that accessibility plays a crucial role in customer footfall. Areas with higher population density also show a strong correlation with greater restaurant success, likely due to increased demand and visibility. Interestingly, regions with moderate competition perform better on average, possibly because they benefit from shared customer traffic without being oversaturated. Additionally, the availability of parking appears to slightly enhance both customer ratings and footfall, indicating the convenience factor matters. Overall, the top-rated restaurants are generally found in well-connected zones with a steady flow of people and balanced competitive environments.
+
