@@ -62,6 +62,8 @@ This code finds the top 10 restaurant locations with the highest average ratings
     <img src="Screenshots/location.png" alt="Top 10 Restaurant Locations by Average Rating" width="700">
 </p>
 
+ <img width="1231" height="735" alt="image" src="https://github.com/user-attachments/assets/87fb7eb1-8125-4837-88e3-513d7f1b5a93" />
+
                                                             Fig 1.Top 10 Restaurant Locations
 
 
@@ -81,7 +83,9 @@ Most data points are clustered around mid-to-high footfall and rating values.
     <img src="Screenshots/Parking Availability.png" alt="Footfall vs Rating" width="700">
 </p>
 
-                                                                Fig 1.Parking Availability
+ <img width="861" height="682" alt="image" src="https://github.com/user-attachments/assets/9f5c8b33-38d4-45ad-9609-39fe3c8c5316" />
+
+                                                                Fig 1.Footfall vs Rating
 
 <pre># Rating vs Distance from City Centre
 plt.figure(figsize=(8,6))
@@ -97,7 +101,9 @@ The boxplot shows how restaurant ratings vary with distance from the city centre
     <img src="Screenshots/Distance Range.png" alt="Distance Range" width="700">
 </p>
 
-                                                        Fig 1.Parking Availability
+ <img width="862" height="683" alt="image" src="https://github.com/user-attachments/assets/5673b0e3-65a0-4ce8-9d46-d2a6b28d8c05" />
+
+                                                        Fig 1.Rating vs Distance from City Centre
 
 
 <pre># Rating by Cuisine Type (top 10)
@@ -116,6 +122,10 @@ This boxplot displays the distribution of ratings for the top 10 most common cui
     <img src="Screenshots/Rating Distribution by Cuisine type.png" alt="Rating Distribution by Cuisine Type" width="700">
 </p>
 
+   <img width="1235" height="732" alt="image" src="https://github.com/user-attachments/assets/4705a397-b7a5-41ed-9a6e-3b2a82bfe03e" />
+
+                                                        Fig 1.Rating by Cuisine Type
+
 
 ## 2. Summarize findings with charts and narrative explanation
 Summary insights (example print statements)
@@ -127,4 +137,5 @@ print("-> Higher population density correlates with greater restaurant success."
 print("->Areas with moderate competition show better average performance.")
 
 Restaurants located near transport hubs tend to receive higher success ratings, suggesting that accessibility plays a crucial role in customer footfall. Areas with higher population density also show a strong correlation with greater restaurant success, likely due to increased demand and visibility. Interestingly, regions with moderate competition perform better on average, possibly because they benefit from shared customer traffic without being oversaturated. Additionally, the availability of parking appears to slightly enhance both customer ratings and footfall, indicating the convenience factor matters. Overall, the top-rated restaurants are generally found in well-connected zones with a steady flow of people and balanced competitive environments.
+
 
